@@ -1,0 +1,16 @@
+# the Collatz sequence
+def collatz(number):
+    if number % 2 == 0:
+        return number // 2
+    elif number % 2 != 0:
+        return 3 * number + 1
+
+while True:
+    try:
+        collatz_result = int(input("Enter number:\n"))
+        while collatz_result != 1:
+            collatz_result = collatz(collatz_result)
+            print(collatz_result)
+        break
+    except ValueError:
+        print("Must enter integer.")
